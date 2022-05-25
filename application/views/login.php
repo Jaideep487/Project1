@@ -2,22 +2,30 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <title>Login Page</title>
+    <style><?php include 'style.css'; ?></style>
+
+<title>Login Page</title>
+
 </head>
 <body>
 
-<h3>Please login to start</h3>
+<div class="login-form">
 <form action="<?= base_url('index.php/home/doLogin') ?>" method="post">
+<div class="content">
+    <div class="input-field"> 
     <label for="uname">User Name</label>
     <input type="text" id="uname" name="username" required>
+    
 
     <label for="pwd">Password</label>
     <input type="password" id="pwd" name="password" required>
-
+    </div>
+</div>
+    <div class="action">
     <button type="submit">Login</button>
-
+</div>
 </form>
-
+</div>
 
 </body>
 
