@@ -23,11 +23,18 @@ class Home extends CI_Controller {
         $check_login = $this->login->checkLogin($username, $password);
 
         if ($check_login) {
-            $this->session->set_userdata('logged_in', true);
-            $this->session->set_userdata('logged_name', 'JaiDeep Singh Makh');
-            redirect(base_url('index.php/dashboard'));
+            if ($check_login['perm']== 1){
+                $this->session->set_userdata('logged_in', true);
+                $this->session->set_userdata('logged_name', $check_login['lname']);
+                redirect(base_url('index.php/dashboard'));
+            }elseif($check_login['perm'] == 2){
+                $this->session->set_userdata('admin_logged_in', true);
+                $this->session->set_userdata('admin_logged_name', $check_login['lname']);
+                redirect(base_url('index.php/admin'));
+            }
         }else{
             $this->session->set_userdata('logged_in', false);
+            $this->session->set_userdata('admin_logged_in', false);
             redirect(base_url());
         }
 

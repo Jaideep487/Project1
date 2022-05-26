@@ -2,13 +2,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <style><?php include 'style.css'; ?></style>
+    <link rel="stylesheet" href="<?= base_url('assets/style.css') ?>"/>
 
 <title>Login Page</title>
 
 </head>
 <body>
-
+    
 <div class="login-form">
 <form action="<?= base_url('index.php/home/doLogin') ?>" method="post">
 <div class="content">

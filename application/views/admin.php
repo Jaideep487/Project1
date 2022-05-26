@@ -2,12 +2,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <title>Dashboard</title>
+    <title>Admin</title>
 </head>
 <body>
-<h2>Hi, <?= $this->session->userdata('logged_name'); ?>
-<h3>Welcome to dashboard</h3>
 
+<h3>Welcome to admin page</h3>
 <a href="<?= base_url('index.php/home/logout')?>" >logout</a>
 
 </body>
